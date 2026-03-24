@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVDM Trade Compliance | Compliance-as-a-Service | Belgium & EU</title>
+<meta name="description" content="Trade Compliance-as-a-Service for Belgian and European companies. Customs, Export Control, Sanctions, AEO, SAP GTS. 12+ years experience. Big 4 background.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0d7377;
+  --primary-dark:#095456;
+  --primary-light:#e8f6f6;
+  --dark:#1a2332;
+  --gray:#555;
+  --light-gray:#f7f9fb;
+  --white:#fff;
+  --accent:#f59e0b;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--dark);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);z-index:100;border-bottom:1px solid rgba(0,0,0,.06);padding:0 2rem}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:64px}
+.nav-logo{font-weight:800;font-size:1.2rem;color:var(--primary);text-decoration:none;letter-spacing:-.5px}
+.nav-logo span{color:var(--dark)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;color:var(--gray);font-size:.9rem;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--primary);color:var(--white)!important;padding:.5rem 1.2rem;border-radius:6px;font-weight:600;transition:background .2s}
+.nav-cta:hover{background:var(--primary-dark)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{width:24px;height:2px;background:var(--dark);transition:.3s}
+
+/* HERO */
+.hero{padding:10rem 2rem 6rem;background:linear-gradient(135deg,var(--dark) 0%,#0f2027 50%,var(--primary-dark) 100%);color:var(--white);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:radial-gradient(circle at 70% 30%,rgba(13,115,119,.3),transparent 60%)}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:rgba(13,115,119,.3);border:1px solid rgba(13,115,119,.5);padding:.4rem 1rem;border-radius:20px;font-size:.85rem;margin-bottom:1.5rem;color:rgba(255,255,255,.9)}
+.hero h1{font-size:3.2rem;font-weight:800;line-height:1.15;margin-bottom:1.5rem;max-width:700px;letter-spacing:-.5px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p{font-size:1.15rem;color:rgba(255,255,255,.8);max-width:600px;margin-bottom:2.5rem;line-height:1.7}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{padding:.8rem 2rem;border-radius:8px;font-weight:600;text-decoration:none;font-size:1rem;transition:all .2s;display:inline-block}
+.btn-primary{background:var(--primary);color:var(--white)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px)}
+.btn-outline{border:2px solid rgba(255,255,255,.3);color:var(--white)}
+.btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.1)}
+
+/* TRUST BAR */
+.trust{padding:3rem 2rem;background:var(--white);border-bottom:1px solid rgba(0,0,0,.06)}
+.trust-inner{max-width:1200px;margin:0 auto;text-align:center}
+.trust p{font-size:.85rem;text-transform:uppercase;letter-spacing:2px;color:var(--gray);margin-bottom:1.5rem;font-weight:600}
+.trust-logos{display:flex;justify-content:center;align-items:center;gap:3rem;flex-wrap:wrap;opacity:.5;font-size:1.1rem;font-weight:700;color:var(--dark)}
+.trust-logos span{white-space:nowrap}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:2px;color:var(--primary);font-weight:700;margin-bottom:.5rem}
+.section-title{font-size:2.2rem;font-weight:800;margin-bottom:1rem;letter-spacing:-.3px}
+.section-subtitle{font-size:1.1rem;color:var(--gray);max-width:600px;margin-bottom:3rem}
+
+/* PROBLEM */
+.problem{background:var(--light-gray)}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.problem-card{background:var(--white);border-radius:12px;padding:2rem;border:1px solid rgba(0,0,0,.06)}
+.problem-icon{font-size:2rem;margin-bottom:1rem}
+.problem-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.problem-card p{font-size:.95rem;color:var(--gray)}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.service-card{background:var(--light-gray);border-radius:12px;padding:2rem;border:1px solid rgba(0,0,0,.04);transition:all .2s}
+.service-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:0 8px 30px rgba(13,115,119,.1)}
+.service-num{font-size:.8rem;font-weight:700;color:var(--primary);margin-bottom:.5rem}
+.service-card h3{font-size:1.1rem;margin-bottom:.5rem}
+.service-card p{font-size:.9rem;color:var(--gray);line-height:1.6}
+
+/* WHY */
+.why{background:var(--light-gray)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:3rem;align-items:center}
+.why-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.stat{background:var(--white);border-radius:12px;padding:1.5rem;text-align:center;border:1px solid rgba(0,0,0,.06)}
+.stat-num{font-size:2.5rem;font-weight:800;color:var(--primary)}
+.stat-label{font-size:.85rem;color:var(--gray);margin-top:.3rem}
+.why-text h3{font-size:1.3rem;margin-bottom:1rem}
+.why-text ul{list-style:none;padding:0}
+.why-text li{padding:.5rem 0;padding-left:1.5rem;position:relative;color:var(--gray);font-size:.95rem}
+.why-text li::before{content:'\2713';position:absolute;left:0;color:var(--primary);font-weight:700}
+
+/* PRICING */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.price-card{background:var(--light-gray);border-radius:12px;padding:2.5rem;border:2px solid transparent;position:relative;transition:all .2s}
+.price-card.featured{border-color:var(--primary);background:var(--white);box-shadow:0 12px 40px rgba(13,115,119,.12)}
+.price-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:var(--white);padding:.3rem 1rem;border-radius:20px;font-size:.75rem;font-weight:700;text-transform:uppercase}
+.price-card h3{font-size:1.2rem;margin-bottom:.5rem}
+.price-card .price{font-size:2rem;font-weight:800;color:var(--primary);margin:.5rem 0}
+.price-card .price span{font-size:.9rem;font-weight:400;color:var(--gray)}
+.price-card .price-desc{font-size:.9rem;color:var(--gray);margin-bottom:1.5rem}
+.price-features{list-style:none;padding:0;margin-bottom:2rem}
+.price-features li{padding:.4rem 0;padding-left:1.5rem;position:relative;font-size:.9rem;color:var(--gray)}
+.price-features li::before{content:'\2713';position:absolute;left:0;color:var(--primary);font-weight:700}
+.price-card .btn{display:block;text-align:center}
+
+/* BACKGROUND */
+.background{background:var(--light-gray)}
+.timeline{position:relative;max-width:800px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--primary-light)}
+.timeline-item{padding-left:2rem;margin-bottom:2rem;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-5px;top:6px;width:12px;height:12px;background:var(--primary);border-radius:50%}
+.timeline-item h3{font-size:1rem;margin-bottom:.2rem}
+.timeline-item .period{font-size:.8rem;color:var(--primary);font-weight:600}
+.timeline-item p{font-size:.9rem;color:var(--gray);margin-top:.3rem}
+
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--dark),var(--primary-dark));color:var(--white);text-align:center;padding:5rem 2rem}
+.cta-section h2{font-size:2.2rem;font-weight:800;margin-bottom:1rem}
+.cta-section p{font-size:1.1rem;opacity:.8;max-width:500px;margin:0 auto 2rem}
+.cta-section .btn-primary{background:var(--accent);padding:1rem 2.5rem;font-size:1.1rem}
+.cta-section .btn-primary:hover{background:#e08e0b}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.6);padding:3rem 2rem;text-align:center;font-size:.85rem}
+footer a{color:var(--primary);text-decoration:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--white);flex-direction:column;padding:1rem 2rem;gap:1rem;border-bottom:1px solid rgba(0,0,0,.1)}
+  .nav-links.open{display:flex}
+  .hero{padding:8rem 1.5rem 4rem}
+  .hero h1{font-size:2rem}
+  .problem-grid,.services-grid,.pricing-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .trust-logos{gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo"><span>TVDM</span> Trade Compliance</a>
+    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why CaaS</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Compliance-as-a-Service | Belgium & EU</div>
+    <h1>Trade compliance expertise <em>without the full-time cost</em></h1>
+    <p>12+ years of customs, export control, and regulatory compliance experience from Big 4 and multinational environments &mdash; available on-demand for your business.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
+      <a href="#services" class="btn btn-outline">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="trust-inner">
+    <p>Trusted experience from</p>
+    <div class="trust-logos">
+      <span>PwC</span>
+      <span>KPMG</span>
+      <span>Johnson & Johnson</span>
+      <span>Borealis</span>
+      <span>Cargill</span>
+      <span>Teledyne Flir</span>
+      <span>Pfizer</span>
+      <span>Ravago</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="problem">
+  <div class="section-inner">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">Why companies struggle with trade compliance</h2>
+    <div class="section-subtitle">Regulations change constantly. Expertise is expensive. Mistakes are costly.</div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">&#128176;</div>
+        <h3>Full-time hire = &euro;60-100k/year</h3>
+        <p>A dedicated trade compliance manager costs a fortune, especially for mid-sized companies that don't need one full-time.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">&#9888;&#65039;</div>
+        <h3>Non-compliance = real risk</h3>
+        <p>Customs penalties, blocked shipments, sanctions violations, revoked authorizations. The cost of getting it wrong is severe.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">&#128200;</div>
+        <h3>Regulations keep changing</h3>
+        <p>Brexit, new sanctions regimes, EU customs reforms, dual-use updates. Keeping up requires constant attention and deep expertise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">Services</div>
+    <h2 class="section-title">What I can do for your business</h2>
+    <div class="section-subtitle">Flexible trade compliance services tailored to your needs &mdash; from one-off projects to ongoing management.</div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <h3>Customs & Trade Compliance Management</h3>
+        <p>Classification, valuation, origin determination, customs declarations, and ongoing compliance monitoring. I manage your customs operations so you can focus on your business.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <h3>Export Control & Sanctions</h3>
+        <p>Export license applications (DCSG), dual-use classification, sanctioned party screening, license management in SAP GTS, and regulatory reporting. Stay compliant, keep shipping.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <h3>AEO & Authorization Management</h3>
+        <p>Full project management for AEO-C/AEO-S certification, approved exporter status, end-use authorizations, and bonded warehouse permits. From application to approval.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <h3>Regulatory Compliance (Chemical/Pharma)</h3>
+        <p>Drug precursors, hormonal substances, ODS, PIC, chemical weapons conventions. Specialized in the regulatory maze of the chemical and pharmaceutical sectors.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <h3>SAP GTS Implementation & Support</h3>
+        <p>Configuration and optimization of SAP GTS for customs, export control, sanctioned party screening, and sales order compliance. Get the most out of your investment.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">06</div>
+        <h3>Trade Compliance Audits & Remediation</h3>
+        <p>Comprehensive audits to identify risk areas and cost savings, followed by hands-on fixes. Also includes Power BI dashboard development for ongoing trade data insights.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">07</div>
+        <h3>Excise & Energy Tax Advisory</h3>
+        <p>Advisory and project management for excise duties, energy taxes, and licensing. Specialized experience in bio-fuel and chemical sector requirements.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">08</div>
+        <h3>Interim Compliance Management</h3>
+        <p>Need temporary coverage? I step in as your in-house compliance manager during transitions, parental leave, or while you search for a permanent hire. Full operational handover included.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CAAS -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="section-label">Why CaaS</div>
+    <h2 class="section-title">Enterprise expertise, startup flexibility</h2>
+    <div class="why-grid">
+      <div class="why-stats">
+        <div class="stat">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">Big 4</div>
+          <div class="stat-label">PwC & KPMG</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">8+</div>
+          <div class="stat-label">Multinational Clients</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">EU</div>
+          <div class="stat-label">Wide Coverage</div>
+        </div>
+      </div>
+      <div class="why-text">
+        <h3>Why hire a full-time compliance officer when you can have one on-demand?</h3>
+        <ul>
+          <li>Pay only for what you need &mdash; monthly retainer or per-project</li>
+          <li>No recruitment costs, no onboarding delay, no overhead</li>
+          <li>Immediate access to Big 4 and multinational-grade expertise</li>
+          <li>Deep knowledge of Belgian & EU customs authorities and procedures</li>
+          <li>Hands-on with the systems you use: SAP GTS, Stream Software, DCSG</li>
+          <li>Scale up during audits, new market entry, or regulatory changes</li>
+          <li>Scale down when things are running smoothly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">Transparent, flexible pricing</h2>
+    <div class="section-subtitle">Choose what fits your business. No lock-in contracts, no surprises.</div>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Project-Based</h3>
+        <div class="price">On quote</div>
+        <div class="price-desc">For defined projects with clear scope</div>
+        <ul class="price-features">
+          <li>AEO certification projects</li>
+          <li>Compliance audits & remediation</li>
+          <li>SAP GTS implementation</li>
+          <li>Brexit/regulatory impact assessments</li>
+          <li>Fixed price, clear deliverables</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="color:var(--primary);border-color:var(--primary)">Request a Quote</a>
+      </div>
+      <div class="price-card featured">
+        <div class="price-badge">Most Popular</div>
+        <h3>Monthly Retainer</h3>
+        <div class="price">from &euro;2.000<span>/month</span></div>
+        <div class="price-desc">Ongoing compliance management</div>
+        <ul class="price-features">
+          <li>Dedicated compliance support</li>
+          <li>Customs & export control management</li>
+          <li>Regulatory monitoring & updates</li>
+          <li>Sanctioned party screening</li>
+          <li>Monthly compliance reporting</li>
+          <li>Priority response times</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </div>
+      <div class="price-card">
+        <h3>Interim Management</h3>
+        <div class="price">Day rate</div>
+        <div class="price-desc">Full-time temporary replacement</div>
+        <ul class="price-features">
+          <li>In-house compliance manager role</li>
+          <li>Full operational responsibility</li>
+          <li>Team management & coaching</li>
+          <li>Handover documentation included</li>
+          <li>Flexible duration</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="color:var(--primary);border-color:var(--primary)">Discuss Needs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section class="background" id="background">
+  <div class="section-inner">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">12+ years of trade compliance</h2>
+    <div class="section-subtitle">From logistics floor to Big 4 management to multinational compliance leadership.</div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="period">Sep 2024 &mdash; Present</div>
+        <h3>Johnson & Johnson &mdash; Regulatory/Trade Compliance Manager</h3>
+        <p>Drug precursors, hormonal substances, ODS, PIC, chemical weapons regulations, and trade compliance management.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Feb 2023 &mdash; Jun 2024</div>
+        <h3>Borealis &mdash; Customs Manager</h3>
+        <p>EU-wide trade compliance across Belgium, Netherlands, Austria. AEO management, SAP GTS lead user, export control screening.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Dec 2021 &mdash; Jan 2023</div>
+        <h3>Cargill &mdash; Senior Customs Advisor</h3>
+        <p>Excise/energy tax projects, licensing for new bio-fuel plant in Ghent.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Jan 2021 &mdash; Nov 2021</div>
+        <h3>Teledyne Flir &mdash; Global Trade Compliance Analyst</h3>
+        <p>Export control authorizations management. DCSG license applications, SAP GTS configuration.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Apr 2020 &mdash; Jan 2021</div>
+        <h3>KPMG &mdash; Manager, Customs</h3>
+        <p>Brexit, e-commerce compliance, trade data management, excise duties advisory.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Sep 2014 &mdash; Mar 2020</div>
+        <h3>PwC &mdash; Manager / Senior Consultant</h3>
+        <p>6 years advising multinationals. In-house at Pfizer & Ravago. AEO certifications. Power BI trade dashboards.</p>
+      </div>
+      <div class="timeline-item">
+        <div class="period">Nov 2013 &mdash; Aug 2014</div>
+        <h3>H. Essers &mdash; Customs Department</h3>
+        <p>Import/export/transit declarations, bonded warehouse management, Stream Software.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to simplify your trade compliance?</h2>
+  <p>Book a free 30-minute consultation to discuss your challenges and how I can help.</p>
+  <a href="mailto:vandenmootertim@gmail.com?subject=Trade%20Compliance%20Inquiry" class="btn btn-primary">vandenmootertim@gmail.com</a>
+  <p style="margin-top:1rem;font-size:.95rem;opacity:.7">Or call: +32 491 16 78 77</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 TVDM Trade Compliance | Tim Van Den Mooter | Kontich, Belgium</p>
+  <p style="margin-top:.5rem">Trade Compliance-as-a-Service for Belgian & European companies</p>
+</footer>
+
+</body>
+</html>
